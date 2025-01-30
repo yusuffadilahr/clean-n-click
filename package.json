@@ -1,0 +1,46 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "serve": "turbo run serve",
+    "start": "node api/server.js",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prepare": "husky install",
+    "postprepare": "find .husky -type f -exec chmod +x {} \\;"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^18.4.2",
+    "@commitlint/config-conventional": "^18.4.2",
+    "@types/crypto-js": "^4.2.2",
+    "@types/js-cookie": "^3.0.6",
+    "eslint": "^8.48.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.1.0",
+    "prettier": "^3.1.0",
+    "tsc-alias": "^1.8.10",
+    "tsconfig": "*",
+    "turbo": "latest"
+  },
+  "name": "finpro-nextjs-express-prisma",
+  "packageManager": "npm@8.15.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npx lint-staged"
+    }
+  },
+  "dependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^1.7.2",
+    "chart.js": "^4.4.7",
+    "flowbite-react": "^0.10.2",
+    "node-cron": "^3.0.3",
+    "react-chartjs-2": "^5.2.0"
+  }
+}

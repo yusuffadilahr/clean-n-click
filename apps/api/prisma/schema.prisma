@@ -1,0 +1,249 @@
+generator client {
+  provider = "prisma-client-js"
+  output = "../../../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id                     String        @id @default(uuid())
+  email                  String        @unique
+  role                   String
+  password               String
+  firstName              String
+  lastName               String
+  phoneNumber            String        @db.VarChar(20)
+  profilePicture         String        @db.VarChar(255)
+  isVerified             Boolean
+  verifyCode             String?
+  isGoogleRegister       Boolean
+  isGooglePasswordChange Boolean?      @default(false)
+  forgotPasswordToken    String?       @db.VarChar(300)
+  isDiscountUsed         Boolean       @default(false)
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+  deletedAt              DateTime?
+  contact                Contact[]
+  order                  Order[]
+  userAddress            UserAddress[]
+
+  @@map("users")
+}
+
+model UserAddress {
+  id            Int       @id @default(autoincrement())
+  addressName   String
+  addressDetail String    @db.VarChar(255)
+  city          String
+  isMain        Boolean
+  province      String
+  country       String
+  zipCode       String
+  latitude      Float
+  longitude     Float
+  userId        String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  deletedAt     DateTime?
+  order         Order[]
+  User          User?     @relation(fields: [userId], references: [id])
+
+  @@map("usersAddresses")
+}
+
+model Store {
+  id        String    @id @default(uuid())
+  storeName String
+  address   String
+  city      String
+  province  String
+  country   String
+  zipCode   String
+  latitude  Float
+  longitude Float
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  order     Order[]
+  worker    Worker[]
+
+  @@map("stores")
+}
+
+model Worker {
+  id                  String        @id @default(uuid())
+  email               String        @unique
+  password            String
+  workerRole          Role
+  firstName           String
+  lastName            String
+  phoneNumber         String        @db.VarChar(20)
+  profilePicture      String        @db.VarChar(255)
+  identityNumber      String?       @db.Text
+  motorcycleType      String?
+  plateNumber         String?
+  changePasswordToken String?       @db.VarChar(500)
+  storeId             String?
+  shiftId             Int?
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  deletedAt           DateTime?
+  orderstatus         OrderStatus[]
+  Shift               Shift?        @relation(fields: [shiftId], references: [id])
+  Store               Store?        @relation(fields: [storeId], references: [id])
+
+  @@map("workers")
+}
+
+model Shift {
+  id        Int       @id @default(autoincrement())
+  startTime DateTime? @db.Time()
+  endTime   DateTime? @db.Time()
+  worker    Worker[]
+
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+
+  @@map("shifts")
+}
+
+model Order {
+  id            String        @id @default(uuid())
+  totalPrice    Int?
+  laundryPrice  Int?
+  totalWeight   Int?
+  discount      Float?
+  deliveryFee   Int
+  paymentProof  String?
+  paymentMethod Payment?
+  isPaid        Boolean
+  isProcessed   Boolean?
+  isDone        Boolean?
+  isReqDelivery Boolean?
+  isConfirm     Boolean?
+  isSolved      Boolean?
+  isComplain    Boolean?
+  complaintText String? @db.Text
+  notes         String? @db.Text
+  storeId       String?
+  userId        String?
+  orderTypeId   Int?
+  userAddressId Int?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  deletedAt     DateTime?
+  orderDetail   OrderDetail[]
+  orderStatus   OrderStatus[]
+  OrderType     OrderType?    @relation(fields: [orderTypeId], references: [id])
+  Store         Store?        @relation(fields: [storeId], references: [id])
+  UserAddress   UserAddress?  @relation(fields: [userAddressId], references: [id])
+  User          User?         @relation(fields: [userId], references: [id])
+
+  @@map("orders")
+}
+
+model OrderType {
+  id        Int       @id @default(autoincrement())
+  type      String?
+  price     Int?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  order     Order[]
+
+  @@map("orderTypes")
+}
+
+model OrderDetail {
+  id            Int          @id @default(autoincrement())
+  orderId       String?
+  quantity      Int?
+  laundryItemId Int?
+  createdAt     DateTime     @default(now())
+  deletedAt     DateTime?
+  updatedAt     DateTime     @updatedAt
+  LaundryItem   LaundryItem? @relation(fields: [laundryItemId], references: [id])
+  Order         Order?       @relation(fields: [orderId], references: [id])
+
+  @@map("orderDetails")
+}
+
+model LaundryItem {
+  id          Int           @id @default(autoincrement())
+  itemName    String
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  deletedAt   DateTime?
+  orderDetail OrderDetail[]
+
+  @@map("laundryItems")
+}
+
+model OrderStatus {
+  id        Int       @id @default(autoincrement())
+  status    Status
+  orderId   String?
+  workerId  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  deletedAt DateTime?
+  Order     Order?    @relation(fields: [orderId], references: [id])
+  Worker    Worker?   @relation(fields: [workerId], references: [id])
+
+  @@map("orderStatuses")
+}
+
+model Contact {
+  id          Int       @id @default(autoincrement())
+  name        String
+  email       String
+  phoneNumber String    @db.VarChar(20)
+  textHelp    String    @db.VarChar(255)
+  userId      String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  User        User?     @relation(fields: [userId], references: [id])
+
+  @@map("contacts")
+}
+
+model spatial_ref_sys {
+  srid      Int     @id
+  auth_name String? @db.VarChar(256)
+  auth_srid Int?
+  srtext    String? @db.VarChar(2048)
+  proj4text String? @db.VarChar(2048)
+}
+
+enum Status {
+  AWAITING_DRIVER_PICKUP
+  DRIVER_TO_OUTLET
+  DRIVER_ARRIVED_AT_OUTLET
+  AWAITING_PAYMENT
+  IN_WASHING_PROCESS
+  IN_IRONING_PROCESS
+  IN_PACKING_PROCESS
+  PAYMENT_DONE
+  DRIVER_TO_CUSTOMER
+  DRIVER_DELIVERED_LAUNDRY
+}
+
+enum Role {
+  SUPER_ADMIN
+  OUTLET_ADMIN
+  WASHING_WORKER
+  IRONING_WORKER
+  PACKING_WORKER
+  DRIVER
+}
+
+enum Payment {
+  MIDTRANS
+  TF_MANUAL
+}
