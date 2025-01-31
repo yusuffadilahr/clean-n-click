@@ -18,7 +18,7 @@ const profilePict: string | undefined = process.env.PROFILE_PICTURE as string
 
 export const userRegisterService = async ({ id, email, firstName, lastName, phoneNumber, verifyCode }: IRegisterBody) => {
     // const checkedEmail = await validate(email)
-
+    
     const checkedEmail = await validate({
         email,
         sender: email,
@@ -60,7 +60,7 @@ export const userRegisterService = async ({ id, email, firstName, lastName, phon
 
         const setTokenUser = await encodeToken({ id: dataUser?.id, role: dataUser?.email, expiresIn: '1h' })
 
-        const emailHTML = fs.readFileSync(`${__dirname}/public/sendMail/emailChangePassword.html`, 'utf-8')
+        const emailHTML = fs.readFileSync('./src/public/sendMail/emailChangePassword.html', 'utf-8')
         const template: TemplateDelegate = compile(emailHTML);
         const compiledHtml: string = template({
             email: email,
@@ -123,7 +123,7 @@ export const resendEmailUserService = async ({ email }: { email: string }) => {
     })
 
     if (updateToken) {
-        const readEmailHtml = fs.readFileSync(`${__dirname}/public/sendMail/emailChangePassword.html`, 'utf-8')
+        const readEmailHtml = fs.readFileSync('./src/public/sendMail/emailChangePassword.html', 'utf-8')
         let template = compile(readEmailHtml)
         const compiledHtml = template({ email, url: `http://localhost:3000/user/set-password/${token}` })
 
@@ -146,7 +146,7 @@ export const resendEmailWorkerService = async ({ email }: { email: string }) => 
     })
 
     if (updatedToken) {
-        const readEmailHtml = fs.readFileSync(`${__dirname}/public/sendMail/emailChangePassword.html`, 'utf-8')
+        const readEmailHtml = fs.readFileSync('./src/public/sendMail/emailChangePassword.html', 'utf-8')
         let template = compile(readEmailHtml)
         const compiledHtml = template({ email, url: `http://localhost:3000/worker/set-password/${token}` })
 
@@ -177,7 +177,7 @@ export const setPasswordUserService = async ({ authorization, userId, password }
     })
 
     if (updatedPassword) {
-        const emailRead = fs.readFileSync(`/public/sendMail/verifyEmailSucces.html`, 'utf-8')
+        const emailRead = fs.readFileSync('./src/public/sendMail/verifyEmailSucces.html', 'utf-8')
         let template = compile(emailRead)
         const compiledHtml = template({ firstName: updatedPassword?.firstName, url: 'http://localhost:3000/user/login' })
         await transporter.sendMail({
@@ -205,7 +205,7 @@ export const setPasswordWorkerService = async ({ authorization, userId, password
     })
 
     if (updatedPassword) {
-        const emailRead = fs.readFileSync(`${__dirname}/public/sendMail/verifyEmailSucces.html`, 'utf-8')
+        const emailRead = fs.readFileSync('./src/public/sendMail/verifyEmailSucces.html', 'utf-8')
         let template = compile(emailRead)
         const compiledHtml = template({ firstName: updatedPassword?.firstName, url: 'http://localhost:3000/worker/login' })
 
@@ -337,7 +337,7 @@ export const createWorkerService = async ({
             }
         })
 
-        const emailHtml = fs.readFileSync(`${__dirname}/public/sendMail/emailChangePassword.html`, 'utf-8')
+        const emailHtml = fs.readFileSync('./src/public/sendMail/emailChangePassword.html', 'utf-8')
         let template = compile(emailHtml)
         const compiledHtml = template({
             email: email,
