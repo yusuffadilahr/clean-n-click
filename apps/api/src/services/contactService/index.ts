@@ -12,7 +12,7 @@ export const createContactMessageService = async ({ email, phoneNumber, userId, 
     const messageUser = await prisma.contact.create({ data: { name, email, phoneNumber, userId: userId, textHelp } })
 
     if (messageUser) {
-        const emailFile = fs.readFileSync(`${__dirname}/public/sendMail/emailContact.html`, 'utf-8')
+        const emailFile = fs.readFileSync('./src/public/sendMail/emailContact.html', 'utf-8')
         let template = compile(emailFile)
         const compiledHtml = template({ firstName: name, url: 'http://localhost:3000' })
         await transporter.sendMail({
