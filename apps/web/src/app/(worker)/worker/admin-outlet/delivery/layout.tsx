@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, Suspense } from 'react'
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 
 export default function Layout({ children }: { children: ReactNode }) {
     return (
-        <>
+        <Suspense fallback={<h1>Loading...</h1>}>
             {children}
-        </>
+        </Suspense>
     );
 }
