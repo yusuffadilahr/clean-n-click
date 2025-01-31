@@ -12,13 +12,14 @@ import { format, isAfter, isBefore } from "date-fns"
 import validate from "deep-email-validator"
 import { Prisma, Worker } from "@prisma/client"
 import { TemplateDelegate } from "handlebars";
+import path from "path"
 
 dotenv.config()
 const profilePict: string | undefined = process.env.PROFILE_PICTURE as string
 
 export const userRegisterService = async ({ id, email, firstName, lastName, phoneNumber, verifyCode }: IRegisterBody) => {
     // const checkedEmail = await validate(email)
-    
+
     const checkedEmail = await validate({
         email,
         sender: email,
@@ -59,12 +60,11 @@ export const userRegisterService = async ({ id, email, firstName, lastName, phon
         })
 
         const setTokenUser = await encodeToken({ id: dataUser?.id, role: dataUser?.email, expiresIn: '1h' })
-
-        const emailHTML = fs.readFileSync('./dist/public/sendMail/emailChangePassword.html', 'utf-8')
+        const emailHTML = fs.readFileSync(path.join(__dirname, '../../src/public/sendMail/emailChangePassword.html'), 'utf-8')
         const template: TemplateDelegate = compile(emailHTML);
         const compiledHtml: string = template({
             email: email,
-            url: `http://localhost:3000/user/set-password/${setTokenUser}`,
+            url: `https://clean-n-click-application.vercel.app/user/set-password/${setTokenUser}`,
         })
 
         await transporter.sendMail({
