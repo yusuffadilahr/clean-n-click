@@ -60,7 +60,7 @@ export const userRegisterService = async ({ id, email, firstName, lastName, phon
         })
 
         const setTokenUser = await encodeToken({ id: dataUser?.id, role: dataUser?.email, expiresIn: '1h' })
-        const emailHTML = fs.readFileSync(path.join(__dirname, '../../src/public/sendMail/emailChangePassword.html'), 'utf-8')
+        const emailHTML = fs.readFileSync(path.join(__dirname, '../../public/sendMail/emailChangePassword.html'), 'utf-8')
         const template: TemplateDelegate = compile(emailHTML);
         const compiledHtml: string = template({
             email: email,
