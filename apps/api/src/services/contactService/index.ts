@@ -15,7 +15,7 @@ export const createContactMessageService = async ({ email, phoneNumber, userId, 
     if (messageUser) {
         const emailFile = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/emailContact.html'), 'utf-8')
         let template = compile(emailFile)
-        const compiledHtml = template({ firstName: name, url: 'http://localhost:3000' })
+        const compiledHtml = template({ firstName: name, url: 'https://clean-n-click-application.vercel.app/' })
         await transporter.sendMail({
             to: email,
             subject: 'Terimakasih telah menghubungi kami',

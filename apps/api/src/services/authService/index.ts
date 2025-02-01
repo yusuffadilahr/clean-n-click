@@ -125,7 +125,7 @@ export const resendEmailUserService = async ({ email }: { email: string }) => {
     if (updateToken) {
         const readEmailHtml = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/emailChangePassword.html'), 'utf-8')
         let template = compile(readEmailHtml)
-        const compiledHtml = template({ email, url: `http://localhost:3000/user/set-password/${token}` })
+        const compiledHtml = template({ email, url: `https://clean-n-click-application.vercel.app/user/set-password/${token}` })
 
         await transporter.sendMail({
             to: email,
@@ -148,7 +148,7 @@ export const resendEmailWorkerService = async ({ email }: { email: string }) => 
     if (updatedToken) {
         const readEmailHtml = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/emailChangePassword.html'), 'utf-8')
         let template = compile(readEmailHtml)
-        const compiledHtml = template({ email, url: `http://localhost:3000/worker/set-password/${token}` })
+        const compiledHtml = template({ email, url: `https://clean-n-click-application.vercel.app/worker/set-password/${token}` })
 
         await transporter.sendMail({
             to: email,
@@ -179,7 +179,7 @@ export const setPasswordUserService = async ({ authorization, userId, password }
     if (updatedPassword) {
         const emailRead = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/verifyEmailSucces.html'), 'utf-8')
         let template = compile(emailRead)
-        const compiledHtml = template({ firstName: updatedPassword?.firstName, url: 'http://localhost:3000/user/login' })
+        const compiledHtml = template({ firstName: updatedPassword?.firstName, url: 'https://clean-n-click-application.vercel.app/user/login' })
         await transporter.sendMail({
             to: updatedPassword?.email,
             subject: `Selamat datang ${updatedPassword?.firstName}`,
@@ -207,7 +207,7 @@ export const setPasswordWorkerService = async ({ authorization, userId, password
     if (updatedPassword) {
         const emailRead = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/verifyEmailSucces.html'), 'utf-8')
         let template = compile(emailRead)
-        const compiledHtml = template({ firstName: updatedPassword?.firstName, url: 'http://localhost:3000/worker/login' })
+        const compiledHtml = template({ firstName: updatedPassword?.firstName, url: 'https://clean-n-click-application.vercel.app/worker/login' })
 
         await transporter.sendMail({
             to: updatedPassword?.email,
@@ -341,7 +341,7 @@ export const createWorkerService = async ({
         let template = compile(emailHtml)
         const compiledHtml = template({
             email: email,
-            url: `http://localhost:3000/worker/set-password/${token}`
+            url: `https://clean-n-click-application.vercel.app/worker/set-password/${token}`
         })
 
         transporter.sendMail({
