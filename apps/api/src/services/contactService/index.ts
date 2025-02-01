@@ -5,6 +5,7 @@ import { compile } from "handlebars"
 import fs from 'fs'
 import { transporter } from "@/utils/transporter"
 import { IContactMessage } from "./types"
+import path from "path"
 
 export const createContactMessageService = async ({ email, phoneNumber, userId, textHelp, name }: IContactMessage) => {
     if (!validateEmail(email)) throw { msg: 'Harap masukan format email dengan benar', status: 401 }
@@ -12,7 +13,7 @@ export const createContactMessageService = async ({ email, phoneNumber, userId, 
     const messageUser = await prisma.contact.create({ data: { name, email, phoneNumber, userId: userId, textHelp } })
 
     if (messageUser) {
-        const emailFile = fs.readFileSync('./dist/public/sendMail/emailContact.html', 'utf-8')
+        const emailFile = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/emailContact.html'), 'utf-8')
         let template = compile(emailFile)
         const compiledHtml = template({ firstName: name, url: 'http://localhost:3000' })
         await transporter.sendMail({
