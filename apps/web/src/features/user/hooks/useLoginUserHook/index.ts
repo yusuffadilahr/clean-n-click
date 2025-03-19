@@ -4,12 +4,14 @@ import { useToast } from "@/components/hooks/use-toast";
 import authStore from "@/zustand/authoStore";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-import { ILoginGoogleUser, ILoginUser } from "./type";
+import { ILoginGoogleUser } from "./type";
 import { instance } from "@/utils/axiosInstance";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Cookies from "js-cookie";
 import auth from "@/utils/firebase";
 import CryptoJS from 'crypto-js'
+import { loginAction } from "@/app/_service/serverside/servercomponents/loginaction";
+import { useRouter } from "next/navigation";
 
 const provider = new GoogleAuthProvider()
 const secret_key_crypto = process.env.NEXT_PUBLIC_CRYPTO_SECRET_KEY || ''
@@ -21,40 +23,40 @@ export const useLoginUserHook = () => {
     const [isDisabledSucces, setIsDisabledSucces] = useState<boolean>(false)
     const togglePasswordVisibility = () => setPasswordVisible(!passwordVisible)
     const { mutate: handleLoginUser, isPending } = useMutation({
-        mutationFn: async ({ email, password }: ILoginUser) => {
-            return await instance.post('/auth/user/login', {
-                email, password
-            })
+        mutationFn: async (fd: FormData) => {
+            const response = await loginAction(fd)
+            if (response.error) throw { ...response }
+            return response
         },
 
         onSuccess: (res) => {
             setToken({
-                token: res?.data?.data?.token,
-                firstName: res?.data?.data?.firstName,
-                lastName: res?.data?.data?.lastName,
-                email: res?.data?.data?.email,
-                role: res?.data?.data?.role,
-                isVerified: res?.data?.data?.isVerified,
-                profilePicture: res?.data?.data?.profilePicture,
-                isDiscountUsed: res?.data?.data?.isDiscountUsed,
+                token: res?.data?.token,
+                firstName: res?.data?.firstName,
+                lastName: res?.data?.lastName,
+                email: res?.data?.email,
+                role: res?.data?.role,
+                isVerified: res?.data?.isVerified,
+                profilePicture: res?.data?.profilePicture,
+                isDiscountUsed: res?.data?.isDiscountUsed,
             })
 
             toast({
-                description: res?.data?.message,
+                description: res?.message,
                 className: "bg-blue-500 text-white p-4 rounded-lg shadow-lg border-none"
             })
 
-            const role = CryptoJS.AES.encrypt(res?.data?.data?.role, secret_key_crypto).toString()
+            const role = CryptoJS.AES.encrypt(res?.data?.role, secret_key_crypto).toString()
 
             Cookies.set('__rolx', role)
-            Cookies.set('__toksed', res?.data?.data?.token)
+            Cookies.set('__toksed', res?.data?.token)
 
             setIsDisabledSucces(true)
             window.location.href = '/'
         },
-        onError: (err: { response: { data: { message: string } } }) => {
+        onError: (err: any) => {
             toast({
-                description: err?.response?.data?.message,
+                description: err?.message,
                 className: "bg-red-500 text-white p-4 rounded-lg shadow-lg"
             })
         }
