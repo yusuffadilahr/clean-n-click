@@ -3,7 +3,7 @@
 import { useToast } from "@/components/hooks/use-toast"
 import { useMutation } from "@tanstack/react-query"
 import { useState } from "react"
-import { registerAction } from "@/app/_service/serverside/servercomponents/registeraction"
+import { registerAction } from "@/app/_service/serverside/fetchserver/registeraction"
 
 export const useRegisterHook = () => {
     const [isDisabledSucces, setIsDisabledSucces] = useState<boolean>(false)

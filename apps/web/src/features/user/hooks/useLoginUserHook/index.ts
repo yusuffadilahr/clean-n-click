@@ -10,8 +10,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Cookies from "js-cookie";
 import auth from "@/utils/firebase";
 import CryptoJS from 'crypto-js'
-import { loginAction } from "@/app/_service/serverside/servercomponents/loginaction";
-import { useRouter } from "next/navigation";
+import { loginAction } from "@/app/_service/serverside/fetchserver/loginaction";
 
 const provider = new GoogleAuthProvider()
 const secret_key_crypto = process.env.NEXT_PUBLIC_CRYPTO_SECRET_KEY || ''
