@@ -9,14 +9,13 @@ import { useDebouncedCallback } from "use-debounce";
 import { toast } from "@/components/hooks/use-toast";
 import { FaStore, FaUser } from "react-icons/fa6";
 
-
 const useUserAddressHook = () => {
     const token = authStore((state) => state?.token)
     const params = useSearchParams()
     const currentUrl = new URLSearchParams(params)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [entriesPerPage, setEntriesPerPage] = useState<number>(5)
-    const [searchItem, setSearchItem] = useState<string>(params.get('search') || '')
+    const [searchItem, setSearchItem] = useState<string>('')
     const [isValueSearch, setIsValueSearch] = useState<string>('')
 
     const router = useRouter()
@@ -34,7 +33,10 @@ const useUserAddressHook = () => {
             })
 
             return response?.data?.data
-        }
+        },
+
+        enabled: !!token,
+        retry: false
     })
 
     const debounce = useDebouncedCallback((value) => {
@@ -99,7 +101,7 @@ const useUserAddressHook = () => {
         router.refresh()
         refetch()
 
-    }, [params, pathname, router, refetch, searchItem])
+    }, [searchItem])
 
     const settingsItems = [
         { name: 'nama alamat', description: 'jl.rorojonggrang', icon: FaUser },

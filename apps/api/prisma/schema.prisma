@@ -73,6 +73,28 @@ model Store {
   @@map("stores")
 }
 
+model Province {
+  id        Int      @id @default(autoincrement())
+  name      String   @unique
+  cities    City[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("province")
+}
+
+model City {
+  id         Int      @id @default(autoincrement())
+  name       String
+  provinceId Int
+  province   Province @relation(fields: [provinceId], references: [id])
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([name, provinceId])
+  @@map("city")
+}
+
 model Worker {
   id                  String        @id @default(uuid())
   email               String        @unique

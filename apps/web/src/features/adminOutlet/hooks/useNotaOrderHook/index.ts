@@ -75,7 +75,7 @@ const useNotaOrderHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, router, pathname, params, page, sortOption, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, sortOption, dateFrom, dateUntil]);
 
 
     const totalPages = dataCreateOrder?.totalPage || 1;

@@ -1,5 +1,3 @@
-'use client'
-
 import authStore from "@/zustand/authoStore";
 import { useEffect, useState } from "react";
 import { instance } from "@/utils/axiosInstance";
@@ -14,7 +12,6 @@ export const useUserDashboardHook = () => {
     const lng = locationStore((state) => state?.longitude)
     const token = authStore((state) => state?.token)
     const storeName = authStore((state) => state?.store)
-    console.log(storeName)
     const role = authStore((state) => state?.role)
     const [isDate, setIsDate] = useState<string>('')
     const [isDay, setIsDay] = useState<number>(0)
@@ -46,6 +43,8 @@ export const useUserDashboardHook = () => {
 
             return res?.data?.data;
         },
+
+        enabled: !!token
     });
 
     const { data: dataOrderNotif } = useQuery({
@@ -57,6 +56,8 @@ export const useUserDashboardHook = () => {
             });
             return res?.data?.data;
         },
+
+        enabled: !!token
     });
 
     const { data: dataOrder, isPending: dataOrderPending } = useQuery({
@@ -67,6 +68,8 @@ export const useUserDashboardHook = () => {
             });
             return res?.data?.data
         },
+
+        enabled: !!token
     });
 
     useEffect(() => {

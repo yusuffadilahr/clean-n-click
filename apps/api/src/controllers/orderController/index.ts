@@ -28,13 +28,13 @@ export const getOrderType = async (req: Request, res: Response, next: NextFuncti
 
 export const getProvince = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const response = await axios.get('https://api.rajaongkir.com/starter/province', {
-      headers: { key: rajaOngkirApiKey }
-    });
+    const response = await prisma.province.findMany()
+    if (response?.length === 0) throw { msg: 'Data tidak tersedia', status: 404 }
+
     res.status(200).json({
       error: false,
       message: "Data provinsi berhasil didapat!",
-      data: response.data
+      data: response
     });
   } catch (error) {
     next(error)
@@ -45,13 +45,16 @@ export const getCity = async (req: Request, res: Response, next: NextFunction) =
   try {
     const { province_id } = req.query as { province_id?: string };
 
-    const response = await axios.get(`https://api.rajaongkir.com/starter/city${province_id ? `?province=${province_id}` : ''}`, {
-      headers: { key: rajaOngkirApiKey }
-    });
+    const findCity = await prisma.city.findMany({
+      where: { provinceId: Number(province_id) }
+    })
+
+    if (findCity?.length === 0) throw { msg: 'Data tidak tersedia', status: 404 }
+
     res.status(200).json({
       error: false,
       message: "Data kota berhasil didapat!",
-      data: response.data
+      data: findCity
     });
   } catch (error) {
     next(error)
@@ -59,7 +62,6 @@ export const getCity = async (req: Request, res: Response, next: NextFunction) =
 }
 
 export const findNearestStore = async (req: Request, res: Response, next: NextFunction) => {
-
   try {
     const { userId } = req.body;
     const { address } = req.query

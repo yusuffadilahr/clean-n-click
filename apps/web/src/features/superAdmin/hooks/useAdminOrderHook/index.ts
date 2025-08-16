@@ -120,7 +120,7 @@ export const useAdminOrderHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [pathname, router, params, searchInput, page, sortOption, activeTab, refetch, dateFrom, dateUntil, outletId]);
+    }, [searchInput, page, sortOption, activeTab, dateFrom, dateUntil, outletId]);
 
 
     const totalPages = dataOrderList?.totalPage || 1;

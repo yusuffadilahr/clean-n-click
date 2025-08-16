@@ -1,12 +1,10 @@
-'use client'
-
 import { useState, useEffect } from 'react';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useToast } from '@/components/hooks/use-toast';
 import { instance } from "@/utils/axiosInstance";
 import authStore from "@/zustand/authoStore";
-import { IAddress, IOrderType, IRequestPickup } from './type';
+import { IAddress, IOrderType, IRequestPickup } from '../types';
 
 export const useRequestPickupHook = () => {
     const token = authStore((state) => state?.token);
@@ -17,8 +15,6 @@ export const useRequestPickupHook = () => {
     const router = useRouter();
     const pathname = usePathname();
     const params = useSearchParams();
-
-
     const [userAddress, setUserAddress] = useState(params.get('address') || null);
 
     const { mutate: handlePickupRequest, isPending: PendingPickupSubmit } = useMutation({
@@ -59,7 +55,8 @@ export const useRequestPickupHook = () => {
             });
             return res?.data?.data;
         },
-        retry: 4,
+        retry: 2,
+        enabled: !!token
 
     });
 
@@ -71,7 +68,8 @@ export const useRequestPickupHook = () => {
             });
             return res?.data?.data;
         },
-        retry: 4,
+        retry: 2,
+        enabled: !!token
     });
 
     const { data: dataNearestStore, refetch, isLoading: dataNearestStoreLoading } = useQuery({
@@ -85,6 +83,8 @@ export const useRequestPickupHook = () => {
             });
             return res?.data?.data;
         },
+
+        enabled: !!token
     });
 
     const handleAddressSelect = (address: IAddress) => {
@@ -101,7 +101,7 @@ export const useRequestPickupHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`);
         refetch()
-    }, [userAddress, router, refetch, pathname]);
+    }, [userAddress]);
 
     return {
         selectedAddress,

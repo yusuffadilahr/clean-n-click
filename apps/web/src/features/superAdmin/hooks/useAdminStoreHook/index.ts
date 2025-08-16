@@ -99,7 +99,7 @@ export const useAdminStoreHook = () => {
         router.refresh()
         refetch()
 
-    }, [params, refetch, pathname, currentPage, totalPages, entriesPerPage, sortStore, router, searchItem])
+    }, [currentPage, totalPages, entriesPerPage, sortStore, searchItem])
 
     return {
         isLoading,

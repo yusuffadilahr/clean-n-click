@@ -150,7 +150,7 @@ const useProductLaundryHook = () => {
         router.refresh()
         refetch()
 
-    }, [params, refetch, pathname, currentPage, totalPages, entriesPerPage, sortProduct, router, searchItem])
+    }, [currentPage, totalPages, entriesPerPage, sortProduct, searchItem])
 
     return {
         currentPage, setCurrentPage,

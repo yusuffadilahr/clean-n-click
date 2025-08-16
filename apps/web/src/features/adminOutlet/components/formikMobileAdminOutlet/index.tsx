@@ -59,7 +59,7 @@ export default function FormikAdminOutletMobile({
                     };
 
                     calculatePrice();
-                }, [values.totalWeight, setFieldValue]);
+                }, [values.totalWeight]);
 
                 return (
                     <Form className="min-h-fit pb-28 w-full space-y-4 gap-4">

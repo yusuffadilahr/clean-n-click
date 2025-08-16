@@ -6,7 +6,6 @@ import { useDebouncedCallback } from "use-debounce"
 import { useSearchParams, useRouter, usePathname } from "next/navigation"
 import { useToast } from "@/components/hooks/use-toast"
 
-
 export const useUserOrderHook = () => {
     const params = useSearchParams();
     const router = useRouter();
@@ -44,6 +43,8 @@ export const useUserOrderHook = () => {
             });
             return res?.data?.data;
         },
+
+        enabled: !!token
     })
 
     const { mutate: handleOrderConfirmation, isPending: handleOrderConfirmationPending } = useMutation({
@@ -149,7 +150,7 @@ export const useUserOrderHook = () => {
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
 
-    }, [searchInput, page, router, pathname, params, sortOption, activeTab, refetch, dateFrom, dateUntil])
+    }, [searchInput, page, sortOption, activeTab, dateFrom, dateUntil])
 
     return {
         params,

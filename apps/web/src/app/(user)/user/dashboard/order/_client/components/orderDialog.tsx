@@ -1,11 +1,12 @@
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import ButtonCustom from "@/components/core/buttonCustom";
 import HorizontalTimeline from "@/components/core/timelineUserCustom"
+import { ConfirmAlert } from "@/components/core/confirmAlertCustom"
+import Loading from "@/components/core/loadingCustom";
+
 import Link from "next/link";
 import { FaWhatsapp } from "react-icons/fa6";
-import Loading from "@/components/core/loadingCustom";
-import { ConfirmAlert } from "@/components/core/confirmAlertCustom"
-import { IOrderPopUpDialog } from "./type";
+import { IOrderPopUpDialog } from "../types";
 
 export default function OrderPopUpDialog({ openDialog, orderData, setOpenDialog, router, handleOrderConfirmation, handleOrderConfirmationPending, handleSolveComplaint, handleSolveComplaintPending }: IOrderPopUpDialog) {
     return (

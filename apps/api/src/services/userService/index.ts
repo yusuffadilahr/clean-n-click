@@ -26,13 +26,11 @@ export const userCreateAddressService = async ({ userId, addressName, addressDet
     if (findAddressUser?.length >= 5) throw { msg: 'Alamat anda sudah penuh, harap hapus salah satu alamat anda', status: 401 }
 
     const isMain = !hasMainAddress;
-    const responseApi = await axios.get(`https://api.rajaongkir.com/starter/province?id=${province}`, {
-        headers: {
-            key: rajaOngkirApiKey
-        }
-    });
+    const findProvince = await prisma.province.findFirst({ where: { id: Number(province) } })
 
-    const provinceName: string = responseApi?.data?.rajaongkir?.results?.province
+    if (!findProvince) throw { msg: 'Gagal mendapatkan data provinsi', status: 400 }
+    const provinceName: string = findProvince?.name
+
     const checkedAddressUser = await prisma.userAddress.findFirst({
         where: {
             AND: [
@@ -68,12 +66,10 @@ export const userCreateAddressService = async ({ userId, addressName, addressDet
 export const userEditAddressService = async ({ addressId, addressName, addressDetail, province, city, zipCode, latitude, longitude, country, userId }: IEditAddressUser) => {
     const existingAddress = await prisma.userAddress.findFirst({ where: { id: parseInt(addressId) } })
     if (!existingAddress) throw { msg: 'Alamat tidak tersedia', status: 404 }
+    const findProvince = await prisma.province.findFirst({ where: { id: Number(province) } })
 
-    const responseApi = await axios.get(`https://api.rajaongkir.com/starter/province?id=${province}`, {
-        headers: { key: rajaOngkirApiKey }
-    });
-
-    const provinceName: string = responseApi?.data?.rajaongkir?.results?.province
+    if (!findProvince) throw { msg: 'Gagal mendapatkan data provinsi', status: 400 }
+    const provinceName: string = findProvince?.name
     const checkedAddressUser = await prisma.userAddress.findFirst({
         where: {
             AND: [

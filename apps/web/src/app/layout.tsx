@@ -8,7 +8,7 @@ import Footer from '@/components/core/footer'
 import AuthProviders from '@/providers/authProviders'
 import { Toaster } from "@/components/ui/toaster"
 import FloatingWhatsappIcon from '@/components/core/floatingWhatsapp';
-
+import "leaflet/dist/leaflet.css";
 
 const inter = Inter({ subsets: ['latin'] });
 

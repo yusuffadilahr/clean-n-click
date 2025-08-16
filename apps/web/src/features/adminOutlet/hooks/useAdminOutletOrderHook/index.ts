@@ -116,7 +116,7 @@ export const useAdminOutletOrderHook = () => {
 
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [params, pathname, router, searchInput, page, sortOption, activeTab, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, sortOption, activeTab, dateFrom, dateUntil]);
 
 
     const totalPages = dataOrderList?.totalPage || 1;

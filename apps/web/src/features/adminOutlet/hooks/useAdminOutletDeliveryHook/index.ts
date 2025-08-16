@@ -107,7 +107,7 @@ export const UseAdminOutletDeliveryHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, page, sortOption, activeTab, refetch, dateFrom, dateUntil, params, pathname, router]);
+    }, [searchInput, page, sortOption, activeTab, dateFrom, dateUntil]);
 
     const totalPages = dataOrderDelivery?.totalPage || 1;
 

@@ -115,7 +115,7 @@ export const useAdminOutletPaymentHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [router, pathname, params, searchInput, page, sortOption, activeTab, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, sortOption, activeTab, dateFrom, dateUntil]);
 
 
     const totalPages = dataOrderList?.totalPage || 1;

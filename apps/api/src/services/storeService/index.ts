@@ -62,12 +62,10 @@ export const getAllStoreService = async ({ search, sort, take, skip, limit }: IG
 }
 
 export const createStoreByAdminService = async ({ storeName, address, province, city, zipCode, latitude, longitude }: ICreateStore) => {
-    const responseApi = await axios.get(`https://api.rajaongkir.com/starter/province?id=${province}`, {
-        headers: { key: rajaOngkirApiKey }
-    })
+    const findProvince = await prisma.province.findFirst({ where: { id: Number(province) } })
 
-    if (!responseApi) throw { msg: 'Gagal mendapatkan data provinsi', status: 400 }
-    const provinceName: string = responseApi?.data?.rajaongkir?.results?.province
+    if (!findProvince) throw { msg: 'Gagal mendapatkan data provinsi', status: 400 }
+    const provinceName: string = findProvince?.name
 
     const findExistingStore = await prisma.store.findFirst({
         where: {
@@ -95,12 +93,10 @@ export const createStoreByAdminService = async ({ storeName, address, province, 
 }
 
 export const updateStoreService = async ({ storeName, address, city, province, zipCode, latitude, longitude, outletId }: IUpdateStore) => {
-    const responseApi = await axios.get(`https://api.rajaongkir.com/starter/province?id=${province}`, {
-        headers: { key: rajaOngkirApiKey }
-    })
+    const findProvince = await prisma.province.findFirst({ where: { id: Number(province) } })
 
-    if (!responseApi) throw { msg: 'Gagal mendapatkan data provinsi', status: 400 }
-    const provinceName: string = responseApi?.data?.rajaongkir?.results?.province
+    if (!findProvince) throw { msg: 'Gagal mendapatkan data provinsi', status: 400 }
+    const provinceName: string = findProvince?.name
 
     const findStore = await prisma.store.findFirst({
         where: {

@@ -77,7 +77,7 @@ export const usePackingHistoryHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, page, router, pathname, params, sortOption, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, sortOption, dateFrom, dateUntil]);
 
 
     const totalPages = dataOrderPackingProcess?.totalPage || 1;

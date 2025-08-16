@@ -17,3 +17,205 @@
 2025-08-16 18:10:45 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/worker ERROR_SERVER: 
 2025-08-16 18:10:55 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/worker ERROR_SERVER: 
 2025-08-16 18:12:04 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/worker ERROR_SERVER: 
+2025-08-16 19:21:05 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/history-user?tab=waiting-payment ERROR_SERVER: 
+2025-08-16 19:21:05 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=user ERROR_SERVER: 
+2025-08-16 19:21:05 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking-user?period=today ERROR_SERVER: 
+2025-08-16 19:22:08 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-16 19:22:08 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-16 19:22:08 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-16 19:22:09 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-16 19:22:09 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-16 19:22:09 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-16 19:22:11 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-16 19:22:11 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-16 19:22:11 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-16 19:22:15 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-16 19:22:15 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-16 19:22:15 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-16 19:22:23 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-16 19:22:23 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-16 19:22:44 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search= ERROR_SERVER: 
+2025-08-16 19:22:45 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search= ERROR_SERVER: 
+2025-08-16 19:22:47 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search= ERROR_SERVER: 
+2025-08-16 19:22:51 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search= ERROR_SERVER: 
+2025-08-16 19:53:03 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:15:05 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:15:06 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:15:08 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:15:13 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:16:16 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:16:19 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 20:16:23 [error]: ERROR 410 undefined - URL: GET /api/order/province ERROR_SERVER: Request failed with status code 410
+2025-08-16 22:30:41 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/user/address/23 ERROR_SERVER: 
+2025-08-16 22:43:45 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:43:46 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:43:48 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:43:52 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:43:53 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:43:55 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:43:59 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:44:04 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:44:05 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:44:07 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:44:11 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:44:40 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:53:33 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ciaahhh ERROR_SERVER: 
+2025-08-16 22:53:34 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ciaahhh ERROR_SERVER: 
+2025-08-16 22:53:48 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ciaahhh ERROR_SERVER: 
+2025-08-16 22:53:52 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ciaahhh ERROR_SERVER: 
+2025-08-16 22:53:53 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ciaahhh ERROR_SERVER: 
+2025-08-16 22:54:33 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ciaahhh ERROR_SERVER: 
+2025-08-16 22:59:03 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:59:03 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=asd ERROR_SERVER: 
+2025-08-16 22:59:13 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ashuu ERROR_SERVER: 
+2025-08-16 22:59:13 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search=ashuu ERROR_SERVER: 
+2025-08-16 22:59:19 [error]: ERROR 400 Alamat utama tidak dapat dihapus karena setidaknya satu alamat diperlukan sebagai alamat utama - URL: DELETE /api/user/address/23 ERROR_SERVER: 
+2025-08-16 22:59:38 [error]: ERROR 406 Ini adalah alamat utama anda - URL: PATCH /api/user/main-address/23 ERROR_SERVER: 
+2025-08-16 22:59:42 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 22:59:43 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 22:59:45 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 22:59:49 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:00:36 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:00:37 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:00:39 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=24 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:00:43 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=24 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:39 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:40 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:42 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:46 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:49 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:50 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:52 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:01:56 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:02:31 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:02:32 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:07:21 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:07:25 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1049`. Message: `Unknown database 'public'`
+2025-08-16 23:22:54 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?.stores
+    WHERE 
+          "deletedAt" IS NULL AND -- Exclude deleted stores
+' at line 17`
+2025-08-16 23:22:55 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?.stores
+    WHERE 
+          "deletedAt" IS NULL AND -- Exclude deleted stores
+' at line 17`
+2025-08-16 23:22:56 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?.stores
+    WHERE 
+          "deletedAt" IS NULL AND -- Exclude deleted stores
+' at line 17`
+2025-08-16 23:22:57 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?.stores
+    WHERE 
+          "deletedAt" IS NULL AND -- Exclude deleted stores
+' at line 17`
+2025-08-16 23:22:59 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?.stores
+    WHERE 
+          "deletedAt" IS NULL AND -- Exclude deleted stores
+' at line 17`
+2025-08-16 23:23:10 [error]: ERROR 500 undefined - URL: GET /api/order/nearest-store?address=25 ERROR_SERVER: 
+Invalid `prisma.$queryRaw()` invocation:
+
+
+Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?.stores
+    WHERE 
+          "deletedAt" IS NULL AND -- Exclude deleted stores
+' at line 17`

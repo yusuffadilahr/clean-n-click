@@ -114,8 +114,8 @@ export const useWashingOrderHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-        
-    }, [searchInput, totalPages, page, router, params, pathname, sortOption, activeTab, refetch, dateFrom, dateUntil]);
+
+    }, [searchInput, totalPages, page, sortOption, activeTab, dateFrom, dateUntil]);
 
 
     return {
