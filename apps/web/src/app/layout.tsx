@@ -32,10 +32,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <TanstackProviders>
           <AuthProviders>
             <Header />
-            {/* <HOCLoading> */}
             {children}
             <Toaster />
-            {/* </HOCLoading> */}
             <FloatingWhatsappIcon />
             <Footer />
           </AuthProviders>

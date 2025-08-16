@@ -39,7 +39,7 @@ export const getLaundryItemsService = async ({ limit, page, search, sort }: IGet
         whereClause = {
             ...whereClause,
             OR: [
-                { itemName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
+                { itemName: { contains: search as string } },
             ],
         };
     }

@@ -28,9 +28,9 @@ export const getAllStoreService = async ({ search, sort, take, skip, limit }: IG
         whereClause = {
             ...whereClause,
             OR: [
-                { storeName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-                { city: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-                { province: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
+                { storeName: { contains: search as string } },
+                { city: { contains: search as string } },
+                { province: { contains: search as string } },
             ]
         }
     }

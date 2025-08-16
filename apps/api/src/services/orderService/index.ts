@@ -119,10 +119,10 @@ export const getUserOrderService = async ({ userId, limit_data, page, search, da
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } }
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } }
           ]
         }
         : {},
@@ -235,10 +235,10 @@ export const getOrdersForDriverService = async ({ authorizationRole, tab, storeI
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -522,10 +522,10 @@ export const getOrdersForWashingService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -672,10 +672,10 @@ export const getOrdersForIroningService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1009,10 +1009,10 @@ export const getOrdersForPackingService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1135,10 +1135,10 @@ export const getPackingHistoryService = async ({ userId, authorizationRole, stor
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1240,10 +1240,10 @@ export const getIroningHistoryService = async ({ userId, authorizationRole, stor
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1352,10 +1352,10 @@ export const getWashingHistoryService = async ({ userId, authorizationRole, stor
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1453,10 +1453,10 @@ export const getNotesService = async ({ userId, authorizationRole, tab, limit_da
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1577,10 +1577,10 @@ export const getCreateNoteOrderService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1716,10 +1716,10 @@ export const getOrdersForDeliveryService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -1892,10 +1892,10 @@ export const getOrdersForDriverDeliveryService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -2182,10 +2182,10 @@ export const getAllOrderForAdminService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -2391,10 +2391,10 @@ export const getDriverHistoryService = async ({ tab, userId, authorizationRole, 
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -2526,10 +2526,10 @@ export const getAllOrderForUserService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},
@@ -2768,10 +2768,10 @@ export const getPaymentOrderForAdminService = async ({
       search
         ? {
           OR: [
-            { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-            { User: { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
-            { User: { phoneNumber: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } } },
+            { id: { contains: search as string } },
+            { User: { firstName: { contains: search as string } } },
+            { User: { lastName: { contains: search as string } } },
+            { User: { phoneNumber: { contains: search as string } } },
           ],
         }
         : {},

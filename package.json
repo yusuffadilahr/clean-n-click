@@ -8,8 +8,7 @@
     "serve": "turbo run serve",
     "start": "node apps/api/dist/index.js",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "prepare": "husky install",
-    "postprepare": "find .husky -type f -exec chmod +x {} \\;"
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@commitlint/cli": "^18.4.2",

@@ -129,11 +129,11 @@ export const getAllUserAddressesService = async ({ userId, search }: { userId: s
             where: {
                 userId,
                 OR: [
-                    { addressName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-                    { addressDetail: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-                    { city: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-                    { province: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-                    { country: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
+                    { addressName: { contains: search as string } },
+                    { addressDetail: { contains: search as string } },
+                    { city: { contains: search as string } },
+                    { province: { contains: search as string } },
+                    { country: { contains: search as string } },
                 ]
             },
             include: {

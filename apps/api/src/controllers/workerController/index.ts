@@ -113,10 +113,10 @@ export const getAllWorker = async (req: Request, res: Response, next: NextFuncti
       whereClause = {
         ...whereClause,
         OR: [
-          { id: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-          { firstName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-          { lastName: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } },
-          { email: { contains: search as string, mode: 'insensitive' as Prisma.QueryMode } }
+          { id: { contains: search as string } },
+          { firstName: { contains: search as string } },
+          { lastName: { contains: search as string } },
+          { email: { contains: search as string } }
         ]
       }
     } else if (typeof sort === 'string') {
