@@ -25,7 +25,6 @@ interface IError extends Error {
     status: number
 }
 
-
 interface UploadedFiles {
     images?: { path: string }[];
 }
@@ -43,7 +42,7 @@ app.use((error: IError, req: Request, res: Response, next: NextFunction) => {
     if (error?.message === 'jwt expired') throw { msg: 'jwt expired', status: 628 }
     res.status(error?.status || 500).json({
         error: true,
-        message: error?.msg || error?.message,
+        message: error?.msg || 'Ada kesalahan dari sisi server',
         data: {}
     })
 })

@@ -1,0 +1,19 @@
+2025-08-16 15:40:52 [error]: ERROR 406 Harap diisi terlebih dahulu! - URL: POST /api/auth/user/register ERROR_SERVER: 
+2025-08-16 15:41:50 [error]: ERROR 406 Nomor telepon hanya boleh berisi angka - URL: POST /api/auth/user/register ERROR_SERVER: 
+2025-08-16 15:41:57 [error]: ERROR 400 Email tidak terdaftar/tidak valid - URL: POST /api/auth/user/register ERROR_SERVER: 
+2025-08-16 15:42:55 [error]: ERROR 500 undefined - URL: POST /api/auth/user/register ERROR_SERVER: connect ETIMEDOUT 103.163.138.73:587
+2025-08-16 15:43:44 [error]: ERROR 500 undefined - URL: POST /api/auth/user/register ERROR_SERVER: connect ETIMEDOUT 103.163.138.73:587
+2025-08-16 16:03:23 [error]: ERROR 400 User sudah terdaftar - URL: POST /api/auth/user/register ERROR_SERVER: 
+2025-08-16 17:05:09 [error]: ERROR 401 Email yang anda masukan salah atau tidak ada - URL: POST /api//auth/user/login ERROR_SERVER: 
+2025-08-16 17:08:56 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-16 17:11:31 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-ironing?tab=proses-setrika ERROR_SERVER: 
+2025-08-16 17:11:31 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-ironing?tab=belum-disetrika ERROR_SERVER: 
+2025-08-16 17:26:45 [error]: ERROR 401 Password anda salah! - URL: POST /api//auth/user/login ERROR_SERVER: 
+2025-08-16 17:46:14 [error]: ERROR 400 Link sudah tidak berlaku - URL: POST /api/auth/user/set-password ERROR_SERVER: 
+2025-08-16 17:48:47 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-washing?tab=in-washing ERROR_SERVER: 
+2025-08-16 17:48:47 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-washing?tab=not-washed ERROR_SERVER: 
+2025-08-16 17:49:22 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-washing?tab=in-washing ERROR_SERVER: 
+2025-08-16 17:49:22 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-washing?tab=not-washed ERROR_SERVER: 
+2025-08-16 18:10:45 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/worker ERROR_SERVER: 
+2025-08-16 18:10:55 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/worker ERROR_SERVER: 
+2025-08-16 18:12:04 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/worker ERROR_SERVER: 

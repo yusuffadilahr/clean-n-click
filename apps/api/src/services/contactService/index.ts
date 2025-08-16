@@ -13,10 +13,12 @@ export const createContactMessageService = async ({ email, phoneNumber, userId, 
     const messageUser = await prisma.contact.create({ data: { name, email, phoneNumber, userId: userId, textHelp } })
 
     if (messageUser) {
-        const emailFile = fs.readFileSync(path.join(__dirname, '../../../src/public/sendMail/emailContact.html'), 'utf-8')
-        let template = compile(emailFile)
-        const compiledHtml = template({ firstName: name, url: 'https://clean-n-click-application.vercel.app/' })
+        const emailHtml = fs.readFileSync(path.join(__dirname, '..', '..', '..', 'public', 'sendMail', 'emailContact.html'), 'utf-8')
+
+        let template = compile(emailHtml)
+        const compiledHtml = template({ firstName: name, url: '' })
         await transporter.sendMail({
+            from: process.env.MAIL_FROM,
             to: email,
             subject: 'Terimakasih telah menghubungi kami',
             html: compiledHtml
