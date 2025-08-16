@@ -1,19 +1,24 @@
 'use client'
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect } from "react";
 import { locationStore } from '@/zustand/locationStore'
 import { useGeolocated } from "react-geolocated";
-import axios from 'axios'
 import { instance } from "@/utils/axiosInstance";
 import authStore from "@/zustand/authoStore";
+import { useRouter } from "next/navigation";
+import Cookies from "js-cookie";
+import CryptoJS from 'crypto-js'
 
+const secret_key_crypto = process.env.NEXT_PUBLIC_CRYPTO_SECRET_KEY || ''
 export default function AuthProviders({ children }: { children: ReactNode }) {
     const setLocationUser = locationStore((state) => state?.setLocationUser)
-    const latitude = locationStore((state) => state?.latitude)
-    const longitude = locationStore((state) => state?.longitude)
+    const router = useRouter()
+
+    // const latitude = locationStore((state) => state?.latitude)
+    // const longitude = locationStore((state) => state?.longitude)
     const token = authStore((state) => state?.token)
     const setKeepAuth = authStore((state) => state?.setKeepAuth)
-    const [dataUser, setDataUser] = useState<string>('')
+    // const [dataUser, setDataUser] = useState<string>('')
 
     const { coords } = useGeolocated({
         positionOptions: {
@@ -21,8 +26,6 @@ export default function AuthProviders({ children }: { children: ReactNode }) {
         },
         userDecisionTimeout: 10000,
     });
-
-
 
     useEffect(() => {
         if (navigator.geolocation) {
@@ -32,15 +35,42 @@ export default function AuthProviders({ children }: { children: ReactNode }) {
                         latitude: position?.coords?.latitude,
                         longitude: position?.coords?.longitude
                     })
+
+                    const accept = CryptoJS.AES.encrypt('accept', secret_key_crypto).toString()
+                    Cookies.set('_DNL', accept)
                 },
                 (error) => {
-                    console.log("??", error);
+                    switch (error.code) {
+                        case 1: // PERMISSION_DENIED
+                            Cookies.set('_DNL', CryptoJS.AES.encrypt('denied', secret_key_crypto).toString());
+                            router.push('/enable-location');
+                            break;
+
+                        case 2: // POSITION_UNAVAILABLE
+                            // Bisa retry atau kasih instruksi nyalakan GPS
+                            router.push('/location-unavailable');
+                            break;
+
+                        case 3:
+                            setTimeout(() => {
+                                window.location.reload();
+                            }, 2000);
+                            break;
+
+                        default:
+                            router.push('/not-found');
+                    }
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
                 }
             );
         } else {
             console.log("Geolocation is not supported by this browser.");
         }
-    }, [coords, setLocationUser])
+    }, [])
 
     useEffect(() => {
         const handleKeepAuth = async () => {
@@ -89,20 +119,22 @@ export default function AuthProviders({ children }: { children: ReactNode }) {
         if (token) {
             handleKeepAuth()
         }
-    }, [token, setKeepAuth])
 
-    useEffect(() => {
-        const getLocation = async (): Promise<void> => {
-            try {
-                const response = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${latitude?.toString()}&lon=${longitude?.toString()}&format=json`)
-                setDataUser(response?.data?.display_name)
-            } catch (error) { }
-        }
-        if (latitude && longitude) {
-            getLocation()
-        }
+    }, [token])
 
-    }, [latitude, longitude])
+    // useEffect(() => {
+    //     const getLocation = async (): Promise<void> => {
+    //         try {
+    //             const response = await axios.get(`https://nominatim.openstreetmap.org/reverse?lat=${latitude?.toString()}&lon=${longitude?.toString()}&format=json`)
+    //             setDataUser(response?.data?.display_name)
+    //         } catch (error) { }
+    //     }
+
+    //     if (latitude && longitude) {
+    //         getLocation()
+    //     }
+
+    // }, [latitude, longitude])
 
     return (
         <>

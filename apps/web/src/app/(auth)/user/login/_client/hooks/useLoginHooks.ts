@@ -4,13 +4,13 @@ import { useToast } from "@/components/hooks/use-toast";
 import authStore from "@/zustand/authoStore";
 import { useMutation } from "@tanstack/react-query";
 import { useState } from "react";
-import { ILoginGoogleUser } from "./type";
+import { ILoginGoogleUser } from "../types";
 import { instance } from "@/utils/axiosInstance";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import Cookies from "js-cookie";
 import auth from "@/utils/firebase";
 import CryptoJS from 'crypto-js'
-import { loginAction } from "@/app/_service/serverside/fetchserver/loginaction";
+import { loginAction } from "../../_server/logic";
 
 const provider = new GoogleAuthProvider()
 const secret_key_crypto = process.env.NEXT_PUBLIC_CRYPTO_SECRET_KEY || ''

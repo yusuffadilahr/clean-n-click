@@ -6,8 +6,8 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Image from "next/image";
 import ButtonCustom from "@/components/core/buttonCustom";
 import { FaGoogle, FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa6";
-import { useLoginUserHook } from "@/features/user/hooks/useLoginUserHook";
-import { loginUserValidationSchema } from "@/features/user/schemas/loginUserValidationSchema";
+import { useLoginUserHook } from "../hooks/useLoginHooks";
+import { loginUserValidationSchema } from "../schema";
 
 export default function Page() {
     const { passwordVisible,

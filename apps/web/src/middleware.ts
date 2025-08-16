@@ -5,7 +5,17 @@ const secret_key = process.env.NEXT_PUBLIC_CRYPTO_SECRET_KEY as string || ''
 export const middleware = (req: NextRequest) => {
     const tokenUser = req.cookies.get('__toksed')?.value
     const roleUser = req.cookies.get('__rolx')?.value
+    const _DNL = req.cookies.get('_DNL')?.value || ''
+    const permissionUser = CryptoJS.AES.decrypt(_DNL, secret_key).toString(CryptoJS.enc.Utf8) as 'accept' | 'denied'
     const pathname = req.nextUrl.pathname
+
+    if (permissionUser === 'denied' && !pathname.startsWith('/enable-location')) {
+        return NextResponse.redirect(new URL('/enable-location', req.url))
+    }
+
+    if (permissionUser === 'accept' && pathname.startsWith('/enable-location')) {
+        return NextResponse.redirect(new URL('/', req.url))
+    }
 
     let role;
     if (roleUser) {
@@ -16,6 +26,7 @@ export const middleware = (req: NextRequest) => {
         (pathname === '/user/login'
             || pathname === '/user/register'
             || pathname === '/worker/login')) {
+        console.log('trigger')
         return NextResponse.redirect(new URL('/', req.url))
     }
 
@@ -62,4 +73,8 @@ export const middleware = (req: NextRequest) => {
     }
 
     return NextResponse.next()
+}
+
+export const config = {
+    matcher: ['/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt|images).*)']
 }
