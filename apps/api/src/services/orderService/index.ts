@@ -6,7 +6,8 @@ import { Prisma, Role, Status, Payment, Order, OrderStatus, } from "@prisma/clie
 import { addHours, addMinutes, isBefore } from "date-fns"
 import { formatOrder } from "@/utils/formatOrder"
 import snap from "@/utils/midtrans"
-
+import mysql from 'mysql2/promise';
+import { rawQueryNearestStore } from "@/utils/rawQuery"
 
 dotenv.config()
 const excludedStatuses = [Status.PAYMENT_DONE];
@@ -44,7 +45,6 @@ export const requestPickUpService = async ({ userId, deliveryFee, outletId, orde
 }
 
 export const findNearestStoreService = async ({ userId, address }: IFindNearestStore) => {
-
   let userAddress;
   if (address) {
     userAddress = await prisma.userAddress.findFirst({
@@ -66,48 +66,22 @@ export const findNearestStoreService = async ({ userId, address }: IFindNearestS
 
   const { latitude: userLatitude, longitude: userLongitude } = userAddress;
 
-  const nearestStores = await prisma.$queryRaw<{
-    id: number;
-    storeName: string;
-    address: string;
-    city: string;
-    province: string;
-    country: string;
-    latitude: number;
-    longitude: number;
-    distance: number;
-  }>`
-    SELECT 
-      id, 
-      "storeName", 
-      address, 
-      city, 
-      province, 
-      country, 
-      latitude, 
-      longitude,
-      ( 
-        6371000 * acos( 
-          cos(radians(${userLatitude})) * cos(radians(latitude)) * 
-          cos(radians(longitude) - radians(${userLongitude})) + 
-          sin(radians(${userLatitude})) * sin(radians(latitude))
-        ) 
-      )/1000 AS distance
-    FROM public.stores
-    WHERE 
-          "deletedAt" IS NULL AND -- Exclude deleted stores
-    ( 
-      6371000 * acos( 
-        cos(radians(${userLatitude})) * cos(radians(latitude)) * 
-        cos(radians(longitude) - radians(${userLongitude})) + 
-        sin(radians(${userLatitude})) * sin(radians(latitude))
-      ) 
-    )/1000 <= 5 -- within 5 km
-    ORDER BY distance ASC
-    LIMIT 1;
-  `;
+  const pool = mysql.createPool({
+    host: process.env.DATABASE_HOST,
+    port: Number(process.env.DATABASE_PORT),
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    database: process.env.DATABASE_NAME,
+  });
 
-  return { nearestStores }
+  const [rows] = await pool.execute(
+    rawQueryNearestStore,
+    [userLatitude, userLongitude, userLatitude]
+  )
+
+  await pool.end()
+
+  return { nearestStores: rows }
 }
 
 export const getUserOrderService = async ({ userId, limit_data, page, search, dateUntil, dateFrom, sort }: IGetUserOrder) => {

@@ -141,7 +141,7 @@ export const usePickupRequestHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, router, pathname, params, activeTab, page, sortOption, refetch, dateFrom, dateUntil]);
+    }, [searchInput, activeTab, page, sortOption, dateFrom, dateUntil]);
 
     return {
         debounce,

@@ -78,7 +78,7 @@ export const useIroningOrderHook = () => {
         setSearchInput(values)
         setPage(1)
     }, 500);
-    
+
     const totalPages = dataOrderIroningProcess?.totalPage || 1;
     useEffect(() => {
         const currentUrl = new URLSearchParams(params.toString());
@@ -117,7 +117,7 @@ export const useIroningOrderHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, router, pathname, params, totalPages, page, sortOption, activeTab, refetch, dateFrom, dateUntil]);
+    }, [searchInput, totalPages, page, sortOption, activeTab, dateFrom, dateUntil]);
 
 
 

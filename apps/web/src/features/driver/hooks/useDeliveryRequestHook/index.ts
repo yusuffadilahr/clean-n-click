@@ -130,7 +130,7 @@ export const useDeliveryRequestHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, router, pathname, params, page, sortOption, activeTab, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, sortOption, activeTab, dateFrom, dateUntil]);
 
     const totalPages = dataOrderDelivery?.totalPage || 1;
 

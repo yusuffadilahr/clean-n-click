@@ -78,7 +78,7 @@ export const useWashingHistoryHook = () => {
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
         
-    }, [searchInput, page, router, params, pathname, sortOption, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, sortOption, dateFrom, dateUntil]);
 
 
     const totalPages = dataOrderWashingProcess?.totalPage || 1;

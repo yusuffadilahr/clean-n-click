@@ -80,7 +80,7 @@ export const useDriverHistoryHook = () => {
         }
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, router, pathname, params, page, activeTab, sortOption, refetch, dateFrom, dateUntil]);
+    }, [searchInput, page, activeTab, sortOption, dateFrom, dateUntil]);
 
 
     const totalPages = dataHistoryOrder?.totalPage || 1;

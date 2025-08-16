@@ -114,7 +114,7 @@ export const useAdminDashboardHook = () => {
         refetch()
         refetchTab()
 
-    }, [refetch, refetchTab, pathname, router, isMonthlyStatistic, params])
+    }, [isMonthlyStatistic])
 
     const completedOrders = dataOrderList?.trackingOrder?.filter((order: IOrder) => order?.isConfirm);
     const pendingOrders = dataOrderList?.trackingOrder?.filter((order: IOrder) => !order?.isDone);

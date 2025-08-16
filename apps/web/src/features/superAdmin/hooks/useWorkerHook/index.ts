@@ -94,7 +94,7 @@ const useWorkerHook = () => {
         router.refresh()
         refetch()
 
-    }, [params, router, searchWorker, sortWorker, refetch, pathname, currentPage, totalPages, entriesPerPage])
+    }, [searchWorker, sortWorker, currentPage, totalPages, entriesPerPage])
 
     return {
         currentPage, setCurrentPage,

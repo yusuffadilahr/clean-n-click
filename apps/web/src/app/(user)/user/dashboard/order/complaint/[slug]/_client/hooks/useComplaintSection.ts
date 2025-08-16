@@ -1,14 +1,11 @@
-'use client'
-
+import React from 'react';
 import { useToast } from "@/components/hooks/use-toast"
 import { instance } from "@/utils/axiosInstance"
-import React from 'react';
 import { useQuery, useMutation } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import authStore from "@/zustand/authoStore";
 
 export const useUserComplaintHook = ({ params }: { params: Promise<{ slug: string }> }) => {
-
     const { slug } = React.use(params);
     const router = useRouter()
 
@@ -23,6 +20,8 @@ export const useUserComplaintHook = ({ params }: { params: Promise<{ slug: strin
             });
             return res?.data?.data;
         },
+
+        enabled: !!token
     });
 
     const { mutate: handleComplaint, isPending } = useMutation({

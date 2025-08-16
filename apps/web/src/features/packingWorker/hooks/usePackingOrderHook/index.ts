@@ -106,7 +106,7 @@ export const usePackingOrderHook = () => {
 
         router.push(`${pathname}?${currentUrl.toString()}`)
         refetch()
-    }, [searchInput, router, pathname, params, page, sortOption, activeTab, refetch, dateFrom, dateUntil]);
+    }, [searchInput,  page, sortOption, activeTab, dateFrom, dateUntil]);
 
 
     const totalPages = dataOrderPackingProcess?.totalPage || 1;
