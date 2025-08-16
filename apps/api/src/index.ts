@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import { dbConnect } from './connection'
 import { portConnect } from './utils/asciiText/dbConnect'
 import fs from 'fs'
+import { logger } from '@/utils/logger'
 
 dotenv.config()
 const port: string | undefined = process.env.PORT as string
@@ -38,8 +39,8 @@ app.use((error: IError, req: Request, res: Response, next: NextFunction) => {
     //         fs.rmSync(`${img?.path}`)
     //     });
     // }
-
-    if (error?.message === 'jwt expired') throw { msg: 'jwt expired', status: 401 }
+    logger.error(`ERROR ${error.status || 500} ${error.msg} - URL: ${req.method} ${req.url} ERROR_SERVER: ${error?.message || ''}`);
+    if (error?.message === 'jwt expired') throw { msg: 'jwt expired', status: 628 }
     res.status(error?.status || 500).json({
         error: true,
         message: error?.msg || error?.message,
