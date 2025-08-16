@@ -12,6 +12,8 @@ const secret_key: string | undefined = process.env.JWT_SECRET as string
 export const userRegister = async (req: Request, res: Response, next: NextFunction) => {
     try {
         const { email, firstName, lastName, phoneNumber } = req?.body
+        console.log(req.body)
+
         const verifyCode = nanoid(6)
         const dateNow = Date.now() * Math.random()
         const id = `CUST${Math.floor(dateNow)}${firstName.toUpperCase()}`

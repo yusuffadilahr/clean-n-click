@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic"
 
-const DynamicBodyLandingComponent = dynamic(() => import('@/app/_service/clientside/components/bodyLandingComponent'), {
+const DynamicBodyLandingComponent = dynamic(() => import('@/app/_client/components/bodyLandingComponent'), {
   loading: () => null
 })
 

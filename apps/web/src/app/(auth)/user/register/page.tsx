@@ -1,7 +1,7 @@
-import Loading from "@/app/_service/clientside/components/loading"
+import Loading from "@/app/_client/components/loading"
 import dynamic from "next/dynamic"
 
-const DynamicBodyRegister = dynamic(() => import('./body'), {
+const DynamicBodyRegister = dynamic(() => import('./_client/components/bodyLogin'), {
     loading: () => <Loading />
 })
 

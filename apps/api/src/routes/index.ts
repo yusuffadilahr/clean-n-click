@@ -8,10 +8,10 @@ import workerRouter from "./workerRouter";
 import contactRouter from "./contactRouter";
 import laundryRouter from "./laundryItemRouter";
 import midtransRouter from "./midtransRouter";
+import path from "path";
 
 const router = Router()
-
-router.use('*/images', express.static('src/public/images'))
+router.use(express.static(path.join(__dirname, '../public')));
 
 router.use('/user', userRouter)
 router.use('/auth', authRouter)
