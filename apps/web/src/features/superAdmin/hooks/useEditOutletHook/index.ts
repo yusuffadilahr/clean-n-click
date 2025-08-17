@@ -33,14 +33,16 @@ export const useEditOutletHook = ({ params }: { params: Promise<{ detail: string
             })
 
             return res?.data?.data
-        }
+        },
+
+        enabled: !!token
     })
 
     const { data: cities, isLoading: citiesLoading, isFetching: loadingPage } = useQuery({
         queryKey: ['get-city', selectedProvince],
         queryFn: async () => {
             const res = await instance.get('/order/city', { params: { province_id: selectedProvince } });
-            return res?.data?.data?.rajaongkir?.results;
+            return res?.data?.data
         },
         enabled: !!selectedProvince,
     })
@@ -49,7 +51,7 @@ export const useEditOutletHook = ({ params }: { params: Promise<{ detail: string
         queryKey: ['get-province'],
         queryFn: async () => {
             const res = await instance.get('/order/province');
-            return res?.data?.data?.rajaongkir?.results
+            return res?.data?.data
         },
     })
 

@@ -18,19 +18,6 @@ dotenv.config()
 const profilePict: string | undefined = process.env.PROFILE_PICTURE as string
 
 export const userRegisterService = async ({ id, email, firstName, lastName, phoneNumber, verifyCode }: IRegisterBody) => {
-    // const checkedEmail = await validate(email)
-
-    // const checkedEmail = await validate({
-    //     email,
-    //     sender: email,
-    //     validateRegex: true,
-    //     validateMx: true,
-    //     validateTypo: true,
-    //     validateDisposable: true,
-    //     validateSMTP: false,
-    // })
-
-    // if (!checkedEmail?.valid) throw { msg: 'Email tidak terdaftar/tidak valid', status: 400 }
     if (!validateEmail(email)) throw { msg: 'Harap masukan format email dengan benar', status: 400 }
     if (!phoneNumberValidation(phoneNumber)) throw { msg: 'Harap masukan format nomor telepon dengan benar', status: 400 }
 

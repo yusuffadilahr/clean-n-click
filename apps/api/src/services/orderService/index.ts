@@ -2614,6 +2614,7 @@ export const paymentOrderVAService = async ({ orderId, email, userId }: IPayment
       },
     });
     if (!existingOrder) throw { msg: "Order tidak ditemukan", status: 404 };
+    if (!existingOrder?.totalPrice || existingOrder?.totalPrice <= 0) throw { msg: 'Total harga tidak valid' }
 
     const paymentToken = await snap.createTransaction({
       payment_type: 'bank_transfer',
@@ -2625,11 +2626,10 @@ export const paymentOrderVAService = async ({ orderId, email, userId }: IPayment
         first_name: existingOrder?.User?.firstName,
         email: existingOrder?.User?.email,
         phone: existingOrder?.User?.phoneNumber,
-      },
+      }
     });
 
     const paymentUrl = paymentToken.redirect_url;
-
     const updatedOrderWithPaymentUrl = await tx.order.update({
       where: { id: String(orderId) },
       data: {
@@ -2638,6 +2638,7 @@ export const paymentOrderVAService = async ({ orderId, email, userId }: IPayment
       },
     });
 
+    console.log(updatedOrderWithPaymentUrl, '<<')
     return { paymentToken, updatedOrderWithPaymentUrl };
   });
 
