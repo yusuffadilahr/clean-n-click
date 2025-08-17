@@ -31,6 +31,7 @@ export default function AuthProviders({ children }: { children: ReactNode }) {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
+                    console.log(position, '<< posi')
                     setLocationUser({
                         latitude: position?.coords?.latitude,
                         longitude: position?.coords?.longitude

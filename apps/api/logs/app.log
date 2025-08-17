@@ -219,3 +219,48 @@ Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; 
     WHERE 
           "deletedAt" IS NULL AND -- Exclude deleted stores
 ' at line 17`
+2025-08-17 00:11:08 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:19:35 [error]: ERROR 404 User admin tidak tersedia - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:19:49 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:19:50 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:21:38 [error]: ERROR 400 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:26:42 [error]: ERROR 400 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:30:37 [error]: ERROR 400 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:32:22 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:33:51 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:41:19 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:43:49 [error]: ERROR 500 undefined - URL: POST /api/auth/worker/login ERROR_SERVER: Invalid time value
+2025-08-17 00:43:50 [error]: ERROR 500 undefined - URL: POST /api/auth/worker/login ERROR_SERVER: Invalid time value
+2025-08-17 00:44:00 [error]: ERROR 404 User admin tidak tersedia - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:44:07 [error]: ERROR 500 undefined - URL: POST /api/auth/worker/login ERROR_SERVER: Invalid time value
+2025-08-17 00:46:16 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:48:08 [error]: ERROR 401 Anda tidak dapat masuk diluar jam kerja - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 00:49:47 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 00:49:47 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 00:49:47 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 00:50:49 [error]: ERROR 401 Password anda salah! - URL: POST /api//auth/user/login ERROR_SERVER: 
+2025-08-17 00:53:21 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 00:53:21 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 00:53:21 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 10:09:12 [error]: ERROR 401 Email yang anda masukan salah atau tidak ada - URL: POST /api//auth/user/login ERROR_SERVER: 
+2025-08-17 10:09:21 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 10:09:21 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 10:09:21 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 10:14:55 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257OA5R7724 ERROR_SERVER: 
+2025-08-17 10:15:01 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257OA5R7724 ERROR_SERVER: 
+2025-08-17 10:15:55 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257OA5R7724 ERROR_SERVER: 
+2025-08-17 10:15:57 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257OA5R7724 ERROR_SERVER: 
+2025-08-17 10:16:48 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257OA5R7724 ERROR_SERVER: 
+2025-08-17 10:18:17 [error]: ERROR 400 Kamu sedang melakukan pesanan, tidak dapat menghapus alamat - URL: DELETE /api/user/address/25 ERROR_SERVER: 
+2025-08-17 10:22:18 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today&outletId= ERROR_SERVER: 
+2025-08-17 10:22:18 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders?outletId= ERROR_SERVER: 
+2025-08-17 10:22:18 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 11:17:40 [error]: ERROR 404 Data outlet belum tersedia - URL: GET /api/store/stores?search=asd&page=1&sort= ERROR_SERVER: 
+2025-08-17 11:17:41 [error]: ERROR 404 Data outlet belum tersedia - URL: GET /api/store/stores?search=asd&page=1&sort= ERROR_SERVER: 
+2025-08-17 11:17:43 [error]: ERROR 404 Data outlet belum tersedia - URL: GET /api/store/stores?search=asd&page=1&sort= ERROR_SERVER: 
+2025-08-17 11:17:47 [error]: ERROR 404 Data outlet belum tersedia - URL: GET /api/store/stores?search=asd&page=1&sort= ERROR_SERVER: 
+2025-08-17 11:52:39 [error]: ERROR 404 User admin tidak tersedia - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 11:53:08 [error]: ERROR 404 User admin tidak tersedia - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 11:53:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 11:53:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 11:53:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 

@@ -72,8 +72,8 @@ export default function EditOutletMobile({
                             <option value="" disabled>Pilih Provinsi</option>
                             {provincesLoading ? (<option disabled>Loading...</option>) : (
                                 provinces?.map((province: any) => (
-                                    <option key={province.province_id} value={province.province_id}>
-                                        {province.province}
+                                    <option key={province.id} value={province.id}>
+                                        {province.name}
                                     </option>
                                 ))
                             )}
@@ -87,7 +87,7 @@ export default function EditOutletMobile({
                             <option value="">{!selectedProvince ? "Silahkan Pilih Provinsi" : "Pilih Kota"}</option>
                             {citiesLoading ? (<option disabled>Loading...</option>) : (
                                 cities?.map((city: any, i: number) => (
-                                    <option key={city?.city_id || i} value={city?.city_name}>{city?.city_name}</option>
+                                    <option key={city?.id || i} value={city?.name}>{city?.name}</option>
                                 ))
                             )}
                         </Field>
