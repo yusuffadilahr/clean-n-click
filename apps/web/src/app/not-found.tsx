@@ -2,29 +2,33 @@ import Image from "next/image";
 
 export default function NotFound() {
     return (
-        <main className="w-full h-screen justify-center items-center flex lg:px-32">
-            <section className="w-full h-full bg-white flex justify-center items-center relative">
-                <div className="w-full h-full lg:w-[75%] lg:h-[80%]">
+        <main className="w-full h-screen flex justify-center items-center px-4 lg:px-32">
+            <section className="w-full max-w-5xl h-full flex flex-col md:flex-row justify-center items-center relative rounded-lg overflow-hidden">
+
+                {/* Gambar */}
+                <div className="w-full md:w-1/2 h-64 md:h-auto flex-shrink-0">
                     <Image
+                        src="https://cdn.svgator.com/images/2024/04/electrocuted-caveman-animation-404-error-page.gif"
+                        alt="404 Error"
                         width={500}
                         height={500}
-                        alt="foto"
-                        src={'https://cdn.svgator.com/images/2024/04/electrocuted-caveman-animation-404-error-page.gif'}
-                        className="w-full object-cover h-full object-bottom"
+                        className="w-full h-full object-contain"
                     />
                 </div>
-                <div className="absolute md:block hidden md:bottom-5 lg:bottom-20 z-10 text-center">
-                    <h1 className="text-xl md:text-2xl lg:text-4xl font-bold text-red-500">
-                        404 <span className="font-normal">Page Not Found!</span>
+
+                {/* Teks */}
+                <div className="w-full md:w-1/2 p-6 flex flex-col justify-center items-center md:items-start text-center md:text-left">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-red-500">
+                        404 <span className="font-normal text-gray-700">Page Not Found!</span>
                     </h1>
-                    <p className="text-sm md:text-lg lg:text-2xl text-gray-700 mt-4">
-                        Oops! It seems like the page you&apos;re looking for does&apos;nt exist.
+                    <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-700">
+                        Oops! It seems like the page you&apos;re looking for doesn&apos;t exist.
                     </p>
-                    <p className="text-xs md:text-base lg:text-lg text-gray-500 mt-2">
-                        The link might be broken, or the page may have been removed.
-                        Please check the URL or return to the homepage.
+                    <p className="mt-2 text-xs sm:text-sm md:text-base text-gray-500">
+                        The link might be broken, or the page may have been removed. Please check the URL or return to the homepage.
                     </p>
                 </div>
+
             </section>
         </main>
     );

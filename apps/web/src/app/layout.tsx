@@ -9,6 +9,7 @@ import AuthProviders from '@/providers/authProviders'
 import { Toaster } from "@/components/ui/toaster"
 import FloatingWhatsappIcon from '@/components/core/floatingWhatsapp';
 import "leaflet/dist/leaflet.css";
+import 'react-phone-number-input/style.css'
 
 const inter = Inter({ subsets: ['latin'] });
 

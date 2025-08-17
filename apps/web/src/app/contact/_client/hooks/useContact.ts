@@ -1,4 +1,3 @@
-'use client'
 import { toast } from "@/components/hooks/use-toast";
 import { instance } from "@/utils/axiosInstance";
 import authStore from "@/zustand/authoStore";
