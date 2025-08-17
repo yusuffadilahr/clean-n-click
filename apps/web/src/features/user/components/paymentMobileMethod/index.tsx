@@ -28,21 +28,53 @@ export default function PaymentMethodWeb({ isArrCardPayment, dataOrderNote, setI
             {dataOrderNote?.order?.isPaid === false && !dataOrderNote?.order?.paymentMethod && !dataOrderNote?.order?.paymentProof ? (
                 <>
                     <div className="space-y-4">
-                        <label htmlFor="midtrans" className=" peer-checked:bg-blue-100 flex items-center justify-between p-4 gap-2 w-full border rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                            <div className='flex gap-2 items-center'>
-                                <FaWallet className="text-lg" />
-                                <span className="text-gray-700 flex">Pembayaran Online <span className="text-sm mt-1 text-gray-500">(Verifikasi Otomatis)</span></span>
+                        <label
+                            htmlFor="midtrans"
+                            className={`flex items-center justify-between p-4 gap-2 w-full border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors ${isPaymentMethod === 'midtrans' ? 'bg-blue-50 border-blue-500' : 'border-gray-300'
+                                }`}
+                        >
+                            <div className='flex gap-3 items-center'>
+                                <FaWallet className="text-lg text-gray-600" />
+                                <div className="flex flex-col">
+                                    <span className="text-gray-700 font-medium">Pembayaran Online</span>
+                                    <span className="text-sm text-gray-500">(Verifikasi Otomatis)</span>
+                                </div>
                             </div>
-                            <input onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIsPaymentMethod(e.target.value)} value='midtrans' type="radio" name="paymentMethod" id="midtrans" className="w-4 h-4 text-blue-600 peer" />
+                            <input
+                                onChange={(e) => setIsPaymentMethod(e.target.value)}
+                                value='midtrans'
+                                checked={isPaymentMethod === 'midtrans'}
+                                type="radio"
+                                name="paymentMethod"
+                                id="midtrans"
+                                className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                            />
                         </label>
-                        <label htmlFor="manualTransfer" className=" peer-checked:bg-blue-100 flex items-center justify-between p-4 gap-2 w-full border rounded-lg cursor-pointer hover:bg-gray-50 transition">
-                            <div className='flex gap-2 items-center'>
-                                <RiBankCardFill className="text-lg" />
-                                <span className="text-gray-700 flex">Transfer Bank <span className="text-sm mt-1 text-gray-500">(Verifikasi Manual Admin)</span></span>
+
+                        <label
+                            htmlFor="manualTransfer"
+                            className={`flex items-center justify-between p-4 gap-2 w-full border rounded-lg cursor-pointer hover:bg-gray-50 transition-colors ${isPaymentMethod === 'manualTransfer' ? 'bg-blue-50 border-blue-500' : 'border-gray-300'
+                                }`}
+                        >
+                            <div className='flex gap-3 items-center'>
+                                <RiBankCardFill className="text-lg text-gray-600" />
+                                <div className="flex flex-col">
+                                    <span className="text-gray-700 font-medium">Transfer Bank</span>
+                                    <span className="text-sm text-gray-500">(Verifikasi Manual Admin)</span>
+                                </div>
                             </div>
-                            <input onChange={(e: React.ChangeEvent<HTMLInputElement>) => setIsPaymentMethod(e.target.value)} value='manualTransfer' type="radio" name="paymentMethod" id="manualTransfer" className="w-4 h-4 text-blue-600 peer" />
+                            <input
+                                onChange={(e) => setIsPaymentMethod(e.target.value)}
+                                value='manualTransfer'
+                                checked={isPaymentMethod === 'manualTransfer'}
+                                type="radio"
+                                name="paymentMethod"
+                                id="manualTransfer"
+                                className="w-4 h-4 text-blue-600 border-gray-300 focus:ring-blue-500 focus:ring-2"
+                            />
                         </label>
                     </div>
+
                     <ButtonCustom type="button" btnColor="bg-blue-500 hover:bg-blue-500" disabled={!isPaymentMethod || dataOrderNote?.order?.laundryPrice === null || dataOrderNote?.order?.laundryPrice === 0} width="w-full" onClick={() => {
                         isPaymentMethod === 'midtrans' ? handlePaymmentOrder(dataOrderNote?.order?.id) : setIsUploadDialogOpen(true)
                     }}>Bayar sekarang</ButtonCustom>
@@ -52,7 +84,7 @@ export default function PaymentMethodWeb({ isArrCardPayment, dataOrderNote, setI
                     <div>Anda telah memilih metode Pembayaran Online</div>
                     <ButtonCustom width="w-full" btnColor="bg-blue-500" txtColor="text-white" onClick={() => router.push(`${dataOrderNote?.order?.paymentProof}`)}>Lanjutkan Pembayaran</ButtonCustom>
                 </div>
-                    : dataOrderNote?.order?.isPaid === true && (dataOrderNote?.order?.paymentMethod === 'MIDTRANS' || dataOrderNote?.order?.paymentMethod === 'TF_MANUAL') ?
+                : dataOrderNote?.order?.isPaid === true && (dataOrderNote?.order?.paymentMethod === 'MIDTRANS' || dataOrderNote?.order?.paymentMethod === 'TF_MANUAL') ?
                     <div className="text-lg mt-8 border-gray-300 p-4">
                         <h1 className="font-bold">Terima kasih,</h1>
                         <p>Anda Telah Melakukan Pembayaran,</p>

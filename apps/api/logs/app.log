@@ -264,3 +264,88 @@ Raw query failed. Code: `1064`. Message: `You have an error in your SQL syntax; 
 2025-08-17 11:53:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
 2025-08-17 11:53:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
 2025-08-17 11:53:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 12:10:02 [error]: ERROR 401 Harap masukan password yang berbeda - URL: PATCH /api/user/change-password ERROR_SERVER: 
+2025-08-17 12:10:21 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-17 12:10:21 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-17 12:10:21 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-17 12:10:22 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-17 12:10:22 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-17 12:10:22 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-17 12:10:24 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-17 12:10:24 [error]: ERROR 500 Alamat utama tidak ditemukan - URL: GET /api/user/main-address ERROR_SERVER: 
+2025-08-17 12:10:24 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address ERROR_SERVER: 
+2025-08-17 12:10:28 [error]: ERROR 404 Alamat utama tidak ditemukan - URL: GET /api/order/nearest-store ERROR_SERVER: 
+2025-08-17 12:10:32 [error]: ERROR 404 User belum menambahkan alamat - URL: GET /api/user/all-address?search= ERROR_SERVER: 
+2025-08-17 12:13:29 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 12:13:29 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 12:13:29 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 12:14:54 [error]: ERROR 404 User admin tidak tersedia - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 12:15:06 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 12:15:06 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 12:15:06 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 12:25:05 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD02574WNU9426 ERROR_SERVER: 
+2025-08-17 13:27:39 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD02574WNU9426 ERROR_SERVER: 
+2025-08-17 13:28:08 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD02574WNU9426 ERROR_SERVER: 
+2025-08-17 13:28:51 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD02574WNU9426 ERROR_SERVER: 
+2025-08-17 13:28:53 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD02574WNU9426 ERROR_SERVER: 
+2025-08-17 13:30:53 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD02574WNU9426 ERROR_SERVER: 
+2025-08-17 13:31:14 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 13:31:14 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 13:31:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 13:31:30 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 13:31:30 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 13:31:30 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 13:31:56 [error]: ERROR 400 Transaksi Gagal! - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:32:20 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257POIL1072 ERROR_SERVER: 
+2025-08-17 13:32:25 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257POIL1072 ERROR_SERVER: 
+2025-08-17 13:33:17 [error]: ERROR 400 Transaksi Gagal! - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:37:46 [error]: ERROR 404 Transaksi tidak tersedia - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:38:14 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257POIL1072 ERROR_SERVER: 
+2025-08-17 13:38:57 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 13:38:57 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 13:38:57 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 13:39:19 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 13:39:19 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 13:39:19 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 13:39:50 [error]: ERROR 400 Transaksi Gagal! - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:39:59 [error]: ERROR 404 Transaksi tidak tersedia - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:42:06 [error]: ERROR 400 Transaksi Gagal! - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:43:23 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257RCA83160 ERROR_SERVER: 
+2025-08-17 13:45:11 [error]: ERROR 404 Transaksi tidak tersedia - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 13:47:39 [error]: ERROR 400 Transaksi Gagal! - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 14:04:42 [error]: ERROR 404 Transaksi tidak tersedia - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 14:05:14 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 14:05:14 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 14:05:14 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 14:05:42 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 14:05:42 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 14:05:42 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 14:06:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 14:06:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 14:06:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 14:06:39 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257CLI49735 ERROR_SERVER: 
+2025-08-17 14:06:47 [error]: ERROR 404 Transaksi tidak tersedia - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 14:09:15 [error]: ERROR 404 Transaksi tidak tersedia - URL: POST /api/webhook/midtrans ERROR_SERVER: 
+2025-08-17 14:10:22 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257CLI49735 ERROR_SERVER: 
+2025-08-17 14:11:52 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders-detail/ORD0257CLI49735 ERROR_SERVER: 
+2025-08-17 14:20:07 [error]: ERROR 404 User admin tidak tersedia - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 14:20:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-packing?tab=packing-process ERROR_SERVER: 
+2025-08-17 14:20:15 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-packing?tab=not-packed-yet ERROR_SERVER: 
+2025-08-17 14:21:30 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-ironing?tab=proses-setrika ERROR_SERVER: 
+2025-08-17 14:21:30 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-ironing?tab=belum-disetrika ERROR_SERVER: 
+2025-08-17 14:22:09 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 14:22:09 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 14:22:09 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 14:22:36 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-ironing?tab=proses-setrika ERROR_SERVER: 
+2025-08-17 14:22:36 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order-ironing?tab=belum-disetrika ERROR_SERVER: 
+2025-08-17 14:23:12 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/tracking?period=today ERROR_SERVER: 
+2025-08-17 14:23:12 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/orders ERROR_SERVER: 
+2025-08-17 14:23:12 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=admin ERROR_SERVER: 
+2025-08-17 14:23:23 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 14:23:23 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 14:23:23 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 14:24:06 [error]: ERROR 401 Password anda salah! - URL: POST /api/auth/worker/login ERROR_SERVER: 
+2025-08-17 14:24:08 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/order?tab=AWAITING_DRIVER_PICKUP ERROR_SERVER: 
+2025-08-17 14:24:08 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/delivery?tab=waiting-driver ERROR_SERVER: 
+2025-08-17 14:24:08 [error]: ERROR 406 Harap login terlebih dahulu - URL: GET /api/order/notification?tab=driver ERROR_SERVER: 
+2025-08-17 14:25:24 [error]: ERROR 401 Password anda salah! - URL: POST /api//auth/user/login ERROR_SERVER: 

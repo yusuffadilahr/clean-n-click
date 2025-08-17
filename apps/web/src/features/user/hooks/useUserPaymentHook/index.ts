@@ -28,6 +28,8 @@ export const useUserPaymentHook = ({ params }: { params: Promise<{ slug: string 
             });
             return res?.data?.data;
         },
+
+        enabled: !!token
     });
 
     const { mutate: handlePaymmentOrder, isPending } = useMutation({
