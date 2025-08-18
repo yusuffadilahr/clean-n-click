@@ -9,7 +9,6 @@ import dotenv from 'dotenv'
 import { compile } from "handlebars"
 import { ICreateWorkerService, ILoginBody, IRegisterBody } from "./types"
 import { format, isAfter, isBefore } from "date-fns"
-import validate from "deep-email-validator"
 import { Prisma, Worker } from "@prisma/client"
 import { TemplateDelegate } from "handlebars";
 import path from "path"

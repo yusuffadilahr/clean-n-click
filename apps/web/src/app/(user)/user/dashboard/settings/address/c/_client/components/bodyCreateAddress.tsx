@@ -83,6 +83,8 @@ export default function Page() {
     const [dataUser, setDataUser] = useState<any>({})
     const [isClientMode, setIsClientMode] = useState<boolean>(false)
 
+    console.log(latitudeGlobal, lngGlobal, "<< ini lat, lng")
+
     const { data: cities, isLoading: citiesLoading, isFetching: loadingPage } = useQuery({
         queryKey: ['get-city', selectedProvince],
         queryFn: async () => {

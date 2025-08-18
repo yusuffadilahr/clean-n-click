@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "serve": "next start",
+    "serve": "next build && next start",
+    "start": "next start",
     "lint": "next lint",
     "test": "npx cypress verify & cypress run --component",
     "analyze": "cross-env ANALYZE=true next build"
