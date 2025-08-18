@@ -6,6 +6,7 @@ import { dbConnect } from './connection'
 import { portConnect } from './utils/asciiText/dbConnect'
 import fs from 'fs'
 import { logger } from '@/utils/logger'
+import mysql from 'mysql2/promise'
 
 dotenv.config()
 const port: string | undefined = process.env.PORT as string
@@ -29,6 +30,22 @@ interface UploadedFiles {
     images?: { path: string }[];
 }
 
+async function testConnection() {
+    try {
+        const connection = await mysql.createConnection({
+            host: process.env.DATABASE_HOST as string,
+            user: process.env.DATABASE_USER as string,
+            password: process.env.DATABASE_PASSWORD as string,
+            database: process.env.DATABASE_NAME as string,
+            port: 3306
+        });
+
+        console.log('Connected to DB!');
+        await connection.end();
+    } catch (error) {
+        console.error('Connection error:', error);
+    }
+}
 
 
 app.use((error: IError, req: Request, res: Response, next: NextFunction) => {
@@ -48,4 +65,6 @@ app.use((error: IError, req: Request, res: Response, next: NextFunction) => {
 })
 
 dbConnect()
+testConnection();
+
 app.listen(port, () => console.log(portConnect))
